@@ -170,11 +170,36 @@
 
     .table-scroll-touch { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 14px; border: 1px solid rgba(56, 189, 248, 0.15); }
     .table-scroll-touch table { width: 100%; min-width: 290px; margin-bottom: 0; font-size: 0.8rem; }
-
+    /* REGLA DE IMPRESIÓN CORREGIDA PARA AMBOS CARNETS */
     @media print {
-      body * { visibility: hidden; }
-      #carnet-credencial, #carnet-credencial * { visibility: visible; }
-      #carnet-credencial { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); width: 300px !important; border: 2px solid #0284c7 !important; }
+      body * {
+        visibility: hidden !important;
+      }
+      #carnet-credencial, #carnet-credencial *,
+      #carnet-credencial-modal, #carnet-credencial-modal * {
+        visibility: visible !important;
+      }
+      #carnet-credencial,
+      #carnet-credencial-modal {
+        position: fixed !important;
+        left: 50% !important;
+        top: 30px !important;
+        transform: translateX(-50%) !important;
+        width: 320px !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border: 2px solid #1d4ed8 !important;
+        border-radius: 20px !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        z-index: 999999 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .modal-backdrop, .modal {
+        background: transparent !important;
+        position: static !important;
+      }
     }
   </style>
 </head>
